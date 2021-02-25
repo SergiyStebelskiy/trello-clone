@@ -31,7 +31,6 @@ const BoardPage = () => {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boards);
   const { name, bg, bgType, tasks, columns } = board;
-  console.log(bg);
   useEffect(() => {
     const board = boards.filter((e) => e.id === params.id)?.[0];
     if (!board?.id) {
@@ -102,7 +101,6 @@ const BoardPage = () => {
         (e) => e.column_id === destination.droppableId
       );
       const sourceTask = sourceColumnTasks[source.index];
-      console.log(sourceTask);
       if (
         destination.droppableId === source.droppableId &&
         destination.index === source.index
@@ -122,7 +120,6 @@ const BoardPage = () => {
             sourceTask,
             ...nextDestinationTasks,
           ];
-          console.log(newColumnTasks);
           dispatch(
             changeBoardTasks(params.id, [
               ...otherColumnTasks,

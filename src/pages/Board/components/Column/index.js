@@ -94,7 +94,7 @@ const Column = ({ id, name, index, tasks, onDelete, onDeleteTask }) => {
                 {tasks.map((task, index) => (
                   <Task
                     id={task.id}
-                    key={index}
+                    key={task.id}
                     index={index}
                     onDelete={onDeleteTask}
                   >
