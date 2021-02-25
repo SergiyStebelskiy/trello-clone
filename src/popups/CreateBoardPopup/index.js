@@ -15,7 +15,7 @@ const CreateBoardPopup = () => {
   const photos = useSelector((state) => state.photos);
   const [boardBg, setBoardBg] = useState({
     type: "image",
-    bg: photos?.[0]?.small,
+    bg: photos?.[0]?.big,
   });
   const [visibleBgSettings, setVisibleBgSettings] = useState(false);
   const dispatch = useDispatch();
@@ -34,12 +34,13 @@ const CreateBoardPopup = () => {
               res.data.photos.map((e) => ({
                 small: e.src.small,
                 big: e.src.large2x,
+                normal: e.src.medium,
               }))
             )
           );
           setBoardBg({
             type: "image",
-            bg: res.data.photos[0].src.small,
+            bg: res.data.photos[0].src.large2x,
           });
         });
     }
@@ -52,7 +53,7 @@ const CreateBoardPopup = () => {
         name,
         bg:
           boardBg.type === "image"
-            ? photos.filter((e) => e.small === boardBg.bg)?.[0]
+            ? photos.filter((e) => e.big === boardBg.bg)?.[0]
             : boardBg.bg,
         bgType: boardBg.type,
         columns: [],

@@ -51,7 +51,7 @@ const BoardBgSettings = ({ photos, colors, bg, onSelect, onClose }) => {
                     style={{ backgroundImage: `url(${photo.small})` }}
                     onClick={() =>
                       bg !== photo.small &&
-                      onSelect({ type: "image", bg: photo.small })
+                      onSelect({ type: "image", bg: photo.big })
                     }
                   >
                     {bg === photo.small && <Check />}
@@ -94,7 +94,7 @@ const BoardBgSettings = ({ photos, colors, bg, onSelect, onClose }) => {
                     style={{ backgroundImage: `url(${photo.small})` }}
                     onClick={() =>
                       bg !== photo.small &&
-                      onSelect({ type: "image", bg: photo.small })
+                      onSelect({ type: "image", bg: photo.big })
                     }
                   >
                     {bg === photo.small && <Check />}
