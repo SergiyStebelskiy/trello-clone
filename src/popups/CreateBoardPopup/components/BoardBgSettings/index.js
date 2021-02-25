@@ -13,8 +13,8 @@ const BoardBgSettings = ({ photos, colors, bg, onSelect, onClose }) => {
         return (
           <Fragment>
             Фотографии:{" "}
-            <a href="https://pixabay.com/ru/" target="_blank" rel="noreferrer">
-              Pixabay
+            <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">
+              Pexels
             </a>
           </Fragment>
         );

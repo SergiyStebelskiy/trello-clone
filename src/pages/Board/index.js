@@ -31,6 +31,7 @@ const BoardPage = () => {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boards);
   const { name, bg, bgType, tasks, columns } = board;
+  console.log(bg);
   useEffect(() => {
     const board = boards.filter((e) => e.id === params.id)?.[0];
     if (!board?.id) {

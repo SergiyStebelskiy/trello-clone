@@ -23,25 +23,27 @@ const CreateBoardPopup = () => {
   useEffect(() => {
     if (!photos.length) {
       axios
-        .get(
-          "https://pixabay.com/api?key=20294227-4dea613d5f67be2b24f0c7f40&per_page=199"
-        )
+        .get("https://api.pexels.com/v1/search?query=nature&per_page=80", {
+          headers: {
+            Authorization: `563492ad6f9170000100000109c44969300a4fb6beace6fd9f43c79f`,
+          },
+        })
         .then((res) => {
           dispatch(
             setPhotos(
-              res.data.hits.map((e) => ({
-                small: e.previewURL,
-                big: e.largeImageURL,
+              res.data.photos.map((e) => ({
+                small: e.src.small,
+                big: e.src.large2x,
               }))
             )
           );
           setBoardBg({
             type: "image",
-            bg: res.data.hits[0].previewURL,
+            bg: res.data.photos[0].src.small,
           });
         });
     }
-  }, []);
+  }, [dispatch]);
 
   const handleCreateBoard = (name) => {
     dispatch(
