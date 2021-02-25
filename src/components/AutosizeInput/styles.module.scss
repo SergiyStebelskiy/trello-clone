@@ -1,0 +1,22 @@
+.field {
+  input {
+    background-color: hsla(0, 0%, 100%, 0.24);
+    padding: 0 12px;
+    height: 32px;
+    font: inherit;
+    line-height: 1;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 4px;
+    max-width: 50vw;
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.28);
+    }
+    &:focus {
+      background-color: white;
+      color: #172b4d;
+      user-select: all;
+    }
+  }
+}

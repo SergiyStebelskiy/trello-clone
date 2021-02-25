@@ -1,0 +1,51 @@
+$bg: hsla(0, 0%, 100%, 0.3);
+$bg_hover: hsla(0, 0%, 100%, 0.2);
+$text_color: white;
+$height: 32px;
+
+.btn {
+  border-radius: 3px;
+  background-color: $bg;
+  display: flex;
+  align-items: center;
+  height: $height;
+  white-space: nowrap;
+  padding: 0 8px;
+  &:hover {
+    background-color: $bg_hover;
+  }
+  .icon {
+    font-family: "trellicons";
+    color: white;
+  }
+  svg {
+    display: block;
+    width: 20px;
+    height: auto;
+    path {
+      fill: $text_color;
+    }
+  }
+  .label {
+    display: block;
+    color: $text_color;
+    padding-left: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+  }
+  &.green {
+    background-color: #5aac44;
+    &:hover {
+      background-color: rgba(#5aac44, 0.85);
+    }
+    &:disabled {
+      background-color: #f4f5f7;
+      cursor: not-allowed;
+      .label,
+      .icon {
+        color: #a5adba;
+      }
+    }
+  }
+}

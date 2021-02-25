@@ -1,0 +1,59 @@
+.bgSide {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(28px * 3 + 24px);
+  height: calc(28px * 3 + 24px);
+  align-items: flex-start;
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    svg {
+      z-index: 2;
+      position: relative;
+      path {
+        fill: white;
+      }
+    }
+    &:hover::before,
+    &.selected::before {
+      content: "";
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  .moreBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+      background: rgb(231, 231, 231);
+    }
+    svg {
+      display: block;
+      width: 16px;
+      height: auto;
+    }
+  }
+}

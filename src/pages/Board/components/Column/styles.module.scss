@@ -1,0 +1,133 @@
+.column {
+  width: 272px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  margin-right: 8px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 8px 4px;
+    form {
+      width: calc(100% - 32px);
+    }
+    input {
+      width: 100%;
+      background: transparent;
+      font-weight: 500;
+      border-radius: 4px;
+      height: 32px;
+      padding: 0 8px;
+      &:focus {
+        background-color: white;
+        border: 2px solid rgb(0, 121, 191);
+      }
+    }
+  }
+  .moreBtn {
+    font-family: "trellicons";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    color: #6b778c;
+    font-weight: normal;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(black, 0.05);
+    }
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    button {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+    .closeBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      font-family: "trellicons";
+      cursor: pointer;
+      font-size: 20px;
+      color: rgba(#42526e, 0.85);
+      margin-left: 4px;
+    }
+  }
+  .footer {
+    padding: 8px;
+    & > .createTaskBtn {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 4px 8px;
+      color: #5e6c84;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 4px;
+      &:hover {
+        background: rgba(black, 0.05);
+      }
+      span {
+        font-family: "trellicons";
+        display: block;
+        margin-right: 4px;
+      }
+    }
+  }
+  .createTaskForm {
+    width: 100%;
+    textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      height: 80px;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  }
+  .tasks {
+    padding: 0 8px;
+    overflow-y: auto;
+    .hiddenTask {
+      height: 1px;
+      width: 0;
+    }
+  }
+  .moreBtnWrap {
+    position: relative;
+    &:hover .menu {
+      display: block;
+    }
+    .menu {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 99;
+      border-radius: 3px;
+      width: 180px;
+      background-color: white;
+      display: none;
+      li {
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 16px;
+      }
+    }
+  }
+}

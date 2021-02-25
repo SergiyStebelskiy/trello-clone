@@ -1,0 +1,38 @@
+.boardsWrap {
+  margin-bottom: 20px;
+  .titleWrap {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 12px;
+    .icon {
+      font-family: "trellicons";
+    }
+    .title {
+      margin-top: 2px;
+      display: block;
+      margin-left: 12px;
+    }
+  }
+  .boards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .addBoard {
+    width: 23%;
+    height: 96px;
+    border-radius: 3px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(9, 30, 66, 0.04);
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(9, 30, 66, 0.1);
+    }
+  }
+}

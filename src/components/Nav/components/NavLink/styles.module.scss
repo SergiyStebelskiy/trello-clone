@@ -1,0 +1,32 @@
+.linkWrap {
+  margin-bottom: 4px;
+  .link {
+    width: 240px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    white-space: nowrap;
+    padding: 6px 8px;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+    color: #172b4d;
+    border-radius: 4px;
+    .icon {
+      font-family: "trellicons";
+    }
+    .title {
+      font-weight: 500;
+      padding-left: 6px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &:hover {
+      background: rgba(black, 0.08);
+    }
+    &.active {
+      background-color: #e4f0f6;
+      color: #0079bf;
+    }
+  }
+}

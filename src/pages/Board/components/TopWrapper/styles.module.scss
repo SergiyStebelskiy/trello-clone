@@ -1,0 +1,38 @@
+.topWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  .col {
+    display: flex;
+  }
+  .starBtn {
+    margin-left: 4px;
+    width: 32px;
+    justify-content: center;
+  }
+  .menuWrap {
+    position: relative;
+  }
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 240px;
+    background-color: white;
+    z-index: 99;
+    box-shadow: 0 12px 24px -6px rgba(9, 30, 66, 0.25),
+      0 0 0 1px rgba(9, 30, 66, 0.08);
+    li {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0 12px;
+      cursor: pointer;
+      font-size: 14px;
+      &:hover {
+        background-color: rgba(black, 0.1);
+      }
+    }
+  }
+}

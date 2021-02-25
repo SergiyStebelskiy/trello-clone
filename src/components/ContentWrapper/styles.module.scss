@@ -1,0 +1,11 @@
+.contentWrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 40px);
+  .col {
+    padding: 40px 16px 0;
+    position: sticky;
+    top: 0px;
+  }
+}

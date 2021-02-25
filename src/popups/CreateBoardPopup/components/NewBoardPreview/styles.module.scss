@@ -1,0 +1,64 @@
+.boardPreview {
+  .newBoard {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 296px;
+    height: 96px;
+    margin-bottom: 8px;
+    position: relative;
+    border-radius: 3px;
+
+    &::before {
+      content: "";
+      background: rgba(0, 0, 0, 0.15);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 3px;
+      z-index: 0;
+    }
+    .closePopupBtn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      display: block;
+      width: 16px;
+      height: auto;
+      z-index: 2;
+      path {
+        fill: white;
+      }
+    }
+    input {
+      background: transparent;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0px 8px;
+      height: 28px;
+      width: 235px;
+      margin-left: 8px;
+      margin-top: 16px;
+      position: relative;
+      z-index: 2;
+      border-radius: 4px;
+      &::placeholder {
+        color: rgba(white, 0.75);
+      }
+      &:hover {
+        background: rgba(white, 0.13);
+      }
+      &:focus {
+        background: rgba(white, 0.17);
+      }
+    }
+  }
+  .createBoardBtn span {
+    font-size: 12px;
+  }
+}

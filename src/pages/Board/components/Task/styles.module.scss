@@ -1,0 +1,32 @@
+.task {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  min-height: 32px;
+  font-size: 14px;
+  position: relative;
+  min-height: 48px;
+  &:hover .deleteBtn {
+    display: flex;
+  }
+  span {
+    word-break: break-all;
+  }
+  .deleteBtn {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: white;
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}

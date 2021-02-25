@@ -1,0 +1,33 @@
+$bg: #026aa7;
+$height: 40px;
+$padding: 4px;
+
+.header {
+  background-color: $bg;
+  height: $height;
+  padding: $padding;
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+  position: relative;
+  .col {
+    display: flex;
+    align-items: center;
+    min-height: calc(#{$height} - (#{$padding} * 2));
+    width: calc(50% - 40px - #{$padding} / 2);
+    .btn:not(:first-child) {
+      margin-left: 4px;
+    }
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+  .logo {
+    display: block;
+    width: 80px;
+    height: auto;
+  }
+  .searchWrap {
+    margin-left: 4px;
+  }
+}

@@ -1,0 +1,17 @@
+.popupWrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  overflow-y: auto;
+  .popupInlineWrap {
+    display: flex;
+    position: relative;
+  }
+}
