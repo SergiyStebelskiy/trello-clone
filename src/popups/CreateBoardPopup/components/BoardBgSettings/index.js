@@ -54,7 +54,7 @@ const BoardBgSettings = ({ photos, colors, bg, onSelect, onClose }) => {
                       onSelect({ type: "image", bg: photo.big })
                     }
                   >
-                    {bg === photo.small && <Check />}
+                    {bg === photo.big && <Check />}
                   </li>
                 ))}
               </ul>
@@ -97,7 +97,7 @@ const BoardBgSettings = ({ photos, colors, bg, onSelect, onClose }) => {
                       onSelect({ type: "image", bg: photo.big })
                     }
                   >
-                    {bg === photo.small && <Check />}
+                    {bg === photo.big && <Check />}
                   </li>
                 ))}
               </ul>

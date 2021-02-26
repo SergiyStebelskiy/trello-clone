@@ -16,7 +16,7 @@ const NewBoardBgSide = ({ bg, onSelect, onMore, photos }) => {
           }
           key={index}
         >
-          {image.small === bg && <Check />}
+          {image.big === bg && <Check />}
         </span>
       ))}
       {colors.slice(0, 4).map((color, index) => (
