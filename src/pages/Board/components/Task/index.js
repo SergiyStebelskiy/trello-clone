@@ -9,7 +9,6 @@ const Task = ({ id, children, index, onEdit }) => {
   useEffect(() => {
     taskRef && setTaskPos(taskRef.current.getBoundingClientRect());
   }, []);
-  console.log(taskPos);
   return (
     <Draggable draggableId={id} index={index}>
       {(provided) => (

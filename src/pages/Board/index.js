@@ -192,9 +192,9 @@ const BoardPage = () => {
               >
                 {columns.map((column, index) => (
                   <Column
+                    key={column.id}
                     {...column}
                     tasks={tasks.filter((e) => e.column_id === column.id)}
-                    key={index}
                     index={index}
                     onDelete={handleDeleteColumn}
                     onDeleteTask={handleDeleteTask}
