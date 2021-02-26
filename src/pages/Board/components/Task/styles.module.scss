@@ -8,25 +8,32 @@
   min-height: 32px;
   font-size: 14px;
   position: relative;
-  min-height: 48px;
-  &:hover .deleteBtn {
-    display: flex;
+  min-height: 32px;
+  &:hover .editBtn {
+    visibility: visible;
   }
   span {
     word-break: break-all;
   }
-  .deleteBtn {
+  .editBtn {
     position: absolute;
-    right: 4px;
-    top: 4px;
-    display: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    background: white;
+    right: 2px;
+    top: 2px;
+    display: flex;
+    visibility: hidden;
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    background-color: #f4f5f7;
+    opacity: 0.8;
     z-index: 99;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding: 4px;
+    font-family: "trellicons";
+    &:hover {
+      opacity: 1;
+    }
   }
 }

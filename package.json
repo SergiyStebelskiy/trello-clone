@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@seznam/compose-react-refs": "^1.0.5",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "node-sass": "^5.0.0",

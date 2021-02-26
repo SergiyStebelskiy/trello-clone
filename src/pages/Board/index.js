@@ -11,10 +11,12 @@ import {
   changeBoardTasks,
   deleteBoardColumn,
   deleteBoardTask,
+  renameBoardTask,
 } from "actions/boards";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import EditTaskPopup from "./popups/EditTaskPopup";
 
 const BoardPage = () => {
   const [visibleAddColumnForm, setVisibleAddColumnForm] = useState(false);
@@ -26,6 +28,7 @@ const BoardPage = () => {
     tasks: [],
     columns: [],
   });
+  const [editTaskPopup, setEditTaskPopup] = useState(null);
   const history = useHistory();
   const params = useParams();
   const dispatch = useDispatch();
@@ -57,9 +60,14 @@ const BoardPage = () => {
   };
   const handleDeleteTask = (id) => {
     dispatch(deleteBoardTask(params.id, id));
+    setEditTaskPopup(null);
+  };
+  const handleRenameTask = (id, newName) => {
+    dispatch(renameBoardTask(params.id, id, newName));
+    setEditTaskPopup(null);
   };
   const handleDragEnd = ({ destination, source, type }) => {
-    if (type === "COLUMN") {
+    if (type === "COLUMN" && destination) {
       const sourceColumn = columns[source.index];
       if (destination.index === source.index) {
         return;
@@ -90,23 +98,23 @@ const BoardPage = () => {
         setBoard({ ...board, columns: newColumns });
         dispatch(changeBoardColumns(params.id, newColumns));
       }
-    } else {
+    } else if (type === "TASK" && destination) {
       const sourceColumnTasks = tasks.filter(
-        (e) => e.column_id === source.droppableId
+        (e) => e.column_id === source?.droppableId
       );
       const otherColumnTasks = tasks.filter(
-        (e) => e.column_id !== destination.droppableId
+        (e) => e.column_id !== destination?.droppableId
       );
       const destinationColumnTasks = tasks.filter(
-        (e) => e.column_id === destination.droppableId
+        (e) => e.column_id === destination?.droppableId
       );
       const sourceTask = sourceColumnTasks[source.index];
       if (
-        destination.droppableId === source.droppableId &&
+        destination?.droppableId === source?.droppableId &&
         destination.index === source.index
       ) {
         return null;
-      } else if (destination.droppableId === source.droppableId) {
+      } else if (destination?.droppableId === source?.droppableId) {
         if (source.index < destination.index) {
           const prevDestinationTasks =
             destinationColumnTasks
@@ -152,7 +160,7 @@ const BoardPage = () => {
         );
         const newColumnTasks = [
           ...prevDestinationTasks,
-          { ...sourceTask, column_id: destination.droppableId },
+          { ...sourceTask, column_id: destination?.droppableId },
           ...nextDestinationTasks,
         ];
         dispatch(
@@ -190,6 +198,9 @@ const BoardPage = () => {
                     index={index}
                     onDelete={handleDeleteColumn}
                     onDeleteTask={handleDeleteTask}
+                    onEditTask={(pos, task) =>
+                      setEditTaskPopup({ position: pos, data: task })
+                    }
                   />
                 ))}
                 {provided.placeholder}
@@ -236,6 +247,14 @@ const BoardPage = () => {
           )}
         </div>
       </div>
+      {editTaskPopup && (
+        <EditTaskPopup
+          {...editTaskPopup}
+          onClose={() => setEditTaskPopup(null)}
+          onRename={handleRenameTask}
+          onDelete={handleDeleteTask}
+        />
+      )}
     </div>
   );
 };

@@ -73,6 +73,17 @@ export const deleteBoardTask = (boardId, taskId) => {
   };
 };
 
+export const renameBoardTask = (boardId, taskId, newName) => {
+  return {
+    type: "RENAME_TASK",
+    payload: {
+      boardId,
+      taskId,
+      newName,
+    },
+  };
+};
+
 export const changeBoardColumns = (boardId, columns) => {
   return {
     type: "CHANGE_COLUMNS",

@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
-const Column = ({ id, name, index, tasks, onDelete, onDeleteTask }) => {
+const Column = ({ id, name, index, tasks, onDelete, onEditTask }) => {
   const [columnName, setColumnName] = useState(name);
   const [newTaskName, setNewTaskName] = useState("");
   const [visibleCreateTaskForm, setVisibleCreateTaskForm] = useState(false);
@@ -96,7 +96,7 @@ const Column = ({ id, name, index, tasks, onDelete, onDeleteTask }) => {
                     id={task.id}
                     key={task.id}
                     index={index}
-                    onDelete={onDeleteTask}
+                    onEdit={onEditTask}
                   >
                     {task.name}
                   </Task>

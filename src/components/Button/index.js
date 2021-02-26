@@ -12,7 +12,11 @@ const Button = ({
   disabled,
 }) => (
   <button
-    className={classnames(s.btn, { [s.green]: styled === "green" }, className)}
+    className={classnames(
+      s.btn,
+      { [s.green]: styled === "green", [s.black]: styled === "black" },
+      className
+    )}
     onClick={onClick}
     aria-label={ariaLabel}
     disabled={disabled}

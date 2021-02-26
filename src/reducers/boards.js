@@ -57,6 +57,18 @@ const boards = (state = initialState, action) => {
           : e
       );
     }
+    case "RENAME_TASK": {
+      return state.map((e) =>
+        e.id === payload.boardId
+          ? {
+              ...e,
+              tasks: e.tasks.map((e) =>
+                e.id === payload.taskId ? { ...e, name: payload.newName } : e
+              ),
+            }
+          : e
+      );
+    }
     case "CHANGE_COLUMNS": {
       return state.map((e) =>
         e.id === payload.boardId ? { ...e, columns: payload.columns } : e

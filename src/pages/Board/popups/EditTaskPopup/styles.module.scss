@@ -1,0 +1,51 @@
+.popupWrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.6);
+  .closeBtn {
+    position: absolute;
+    color: white;
+    padding: 9px;
+    right: 8px;
+    top: 8px;
+    transition-property: transform, color;
+    transition-duration: 0.15s;
+    cursor: pointer;
+    font-family: "trellicons";
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .editTaskWrap {
+    position: absolute;
+    width: 254px;
+    .field {
+      width: 100%;
+      height: 96px;
+      margin-bottom: 16px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .btn {
+      padding: 0 16px;
+    }
+  }
+  .btns {
+    position: absolute;
+    li {
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+    .btn {
+      transition: margin 85ms ease-in;
+      &:hover {
+        margin-left: 4px;
+      }
+    }
+  }
+}
