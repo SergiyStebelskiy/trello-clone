@@ -12,9 +12,11 @@ const Boards = ({ title, data, onAdd, icon }) => (
       {data.map((board, index) => (
         <BoardCard {...board} key={index} />
       ))}
-      <li className={s.addBoard} onClick={onAdd}>
-        Создать доску
-      </li>
+      {onAdd && (
+        <li className={s.addBoard} onClick={onAdd}>
+          Создать доску
+        </li>
+      )}
     </ul>
   </div>
 );
@@ -28,7 +30,6 @@ Boards.defaultProps = {
   title: "",
   icon: "",
   data: [],
-  onAdd: () => {},
 };
 
 export default Boards;

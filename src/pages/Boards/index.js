@@ -7,9 +7,19 @@ import { changePopup } from "actions/popup";
 const BoardsPage = () => {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boards);
+  const choosenBoards = boards.filter((e) => e.choosen);
   return (
     <ContentWrapper>
       <div className={s.col}>
+        {choosenBoards.length > 0 && (
+          <Boards
+            icon="&#xE95F;"
+            title="Отмеченные доски"
+            data={choosenBoards.map(({ columns, tasks, ...spread }) => ({
+              ...spread,
+            }))}
+          />
+        )}
         <Boards
           icon="&#xE942;"
           title="Персональные доски"

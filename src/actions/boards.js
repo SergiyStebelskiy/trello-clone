@@ -22,6 +22,13 @@ export const deleteBoard = (boardId) => {
   };
 };
 
+export const changeChoosenBoard = (boardId) => {
+  return {
+    type: "CHANGE_CHOOSEN_BOARD",
+    payload: boardId,
+  };
+};
+
 export const createBoardColumn = (boardId, column) => {
   return {
     type: "CREATE_COLUMN",

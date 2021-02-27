@@ -14,7 +14,8 @@ const NewBoardPreview = ({ boardBg, onCreate }) => {
       <div
         className={s.newBoard}
         style={{
-          backgroundImage: boardBg.type === "image" && `url(${boardBg.bg.big})`,
+          backgroundImage:
+            boardBg.type === "image" && `url(${boardBg.bg?.big})`,
           backgroundColor: boardBg.type === "color" && boardBg.bg,
         }}
       >

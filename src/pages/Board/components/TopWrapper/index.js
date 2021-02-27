@@ -6,17 +6,21 @@ import { renameBoard } from "actions/boards";
 import { useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import useOutsideClicker from "hooks/useOutsideClicker";
-import { deleteBoard } from "actions/boards";
+import { deleteBoard, changeChoosenBoard } from "actions/boards";
+import classnames from "classnames";
 
-const TopWrapper = ({ name }) => {
+const TopWrapper = ({ name, choosen }) => {
   const [nameVal, setNameVal] = useState(name);
   const [visibleMenu, setVisibleMenu] = useState(false);
+  const [isChoosen, setIsChoosen] = useState(choosen);
   const dispatch = useDispatch();
   const params = useParams();
   const history = useHistory();
   let fieldNode = document.querySelector("input[name='board_name']");
   const menuRef = useRef(null);
-
+  useEffect(() => {
+    setIsChoosen(choosen);
+  }, [choosen]);
   useOutsideClicker(menuRef, () => {
     setVisibleMenu(false);
   });
@@ -51,7 +55,14 @@ const TopWrapper = ({ name }) => {
             onBlur={handleSaveName}
           />
         </form>
-        <Button className={s.starBtn} icon="&#xE95F;" />
+        <Button
+          className={classnames(s.starBtn, { [s.choosen]: isChoosen })}
+          icon="&#xE95F;"
+          onClick={() => {
+            dispatch(changeChoosenBoard(params.id));
+            setIsChoosen(!isChoosen);
+          }}
+        />
       </div>
       <div className={s.menuWrap} ref={menuRef}>
         <Button

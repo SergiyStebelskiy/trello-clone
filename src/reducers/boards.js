@@ -14,6 +14,11 @@ const boards = (state = initialState, action) => {
     case "DELETE_BOARD": {
       return state.filter((e) => e.id !== payload);
     }
+    case "CHANGE_CHOOSEN_BOARD": {
+      return state.map((e) =>
+        e.id === payload ? { ...e, choosen: !e.choosen } : e
+      );
+    }
     case "CREATE_COLUMN": {
       return state.map((e) =>
         e.id === payload.boardId

@@ -56,6 +56,7 @@ const CreateBoardPopup = () => {
         bgType: boardBg.type,
         columns: [],
         tasks: [],
+        choosen: false,
       })
     );
     dispatch(changePopup(null));

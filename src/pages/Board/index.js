@@ -27,13 +27,14 @@ const BoardPage = () => {
     bg: {},
     tasks: [],
     columns: [],
+    choosen: false,
   });
   const [editTaskPopup, setEditTaskPopup] = useState(null);
   const history = useHistory();
   const params = useParams();
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boards);
-  const { name, bg, bgType, tasks, columns } = board;
+  const { name, bg, bgType, tasks, columns, choosen } = board;
   useEffect(() => {
     const board = boards.filter((e) => e.id === params.id)?.[0];
     if (!board?.id) {
@@ -180,7 +181,7 @@ const BoardPage = () => {
         backgroundColor: bgType === "color" && bg,
       }}
     >
-      <TopWrapper name={name} />
+      <TopWrapper name={name} choosen={choosen} />
       <div className={s.wrap}>
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="board" type="COLUMN" direction="horizontal">
