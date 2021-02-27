@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Simple Trello clone
+
+This project was created based on [Trello](https://trello.com/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Demo
 
-In the project directory, you can run:
+[Trello-clone](https://trello-clone-xi.vercel.app/)
 
-### `yarn start`
+![Знімок екрана 2021-02-27 о 17 23 24](https://user-images.githubusercontent.com/46384591/109391601-93c4e180-7920-11eb-9462-e164e8dbcb0b.png)
+![Знімок екрана 2021-02-27 о 17 33 57](https://user-images.githubusercontent.com/46384591/109391880-03879c00-7922-11eb-93a8-d61329dce02b.png)
+![Знімок екрана 2021-02-27 о 17 38 24](https://user-images.githubusercontent.com/46384591/109392049-a3ddc080-7922-11eb-8f93-c8487815e8ba.png)
+![Знімок екрана 2021-02-27 о 17 40 23](https://user-images.githubusercontent.com/46384591/109392103-f1f2c400-7922-11eb-9fe3-b4e26458da72.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Technologies
 
-### `yarn test`
+This project uses exclusively **local storage** for data storage.
+***Your data is not saved on another device***
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React.js](https://www.npmjs.com/package/react)
+- [ReactRouterDom](https://www.npmjs.com/package/react-router-dom)
+- [ReactRedux](https://www.npmjs.com/package/react-redux)
+- [Redux](https://www.npmjs.com/package/redux)
+- [Axios](https://www.npmjs.com/package/axios)
+- [classNames](https://www.npmjs.com/package/classnames)
+- [NodeSASS](https://www.npmjs.com/package/node-sass)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- [ReactBeautifulDnD](https://www.npmjs.com/package/react-beautiful-dnd)
+- [ReactInputAutosize](https://www.npmjs.com/package/react-input-autosize)
+- [ReactPlayer](https://www.npmjs.com/package/react-player)
+- [uuId](https://www.npmjs.com/package/uuid)
 
-### `yarn build`
+# Service interactions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project uses the [Pexels](https://www.pexels.com/) for background images.
