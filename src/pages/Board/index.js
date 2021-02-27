@@ -53,6 +53,7 @@ const BoardPage = () => {
         // position: board.columns.length + 1,
       };
       dispatch(createBoardColumn(params.id, column));
+      setVisibleAddColumnForm(false);
       setNewColumnVal("");
     }
   };
