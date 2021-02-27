@@ -21,7 +21,9 @@ const Header = () => {
       className={s.header}
       style={{
         backgroundColor:
-          location.pathname !== paths.boards && "rgba(0,0,0,.15)",
+          location.pathname !== paths.boards &&
+          location.pathname !== paths.home &&
+          "rgba(0,0,0,.15)",
       }}
     >
       <div className={s.col}>
