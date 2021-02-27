@@ -80,7 +80,7 @@ const Column = ({ id, name, index, tasks, onDelete, onEditTask }) => {
             <div className={s.moreBtnWrap}>
               <span className={s.moreBtn}>&#xE94E;</span>
               <ul className={s.menu}>
-                <li onClick={() => onDelete(id)}>Delete</li>
+                <li onClick={() => onDelete(id)}>Удалить</li>
               </ul>
             </div>
           </header>

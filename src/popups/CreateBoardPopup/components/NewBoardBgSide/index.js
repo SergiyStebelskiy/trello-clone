@@ -11,12 +11,10 @@ const NewBoardBgSide = ({ bg, onSelect, onMore, photos }) => {
         <span
           style={{ backgroundImage: `url(${image.small})` }}
           className={classnames(s.item, { [s.selected]: image.small === bg })}
-          onClick={() =>
-            image !== bg && onSelect({ type: "image", bg: image.big })
-          }
+          onClick={() => image !== bg && onSelect({ type: "image", bg: image })}
           key={index}
         >
-          {image.big === bg && <Check />}
+          {image.big === bg.big && <Check />}
         </span>
       ))}
       {colors.slice(0, 4).map((color, index) => (

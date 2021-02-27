@@ -15,8 +15,9 @@ const CreateBoardPopup = () => {
   const photos = useSelector((state) => state.photos);
   const [boardBg, setBoardBg] = useState({
     type: "image",
-    bg: photos?.[0]?.big,
+    bg: photos?.[0],
   });
+  console.log(boardBg);
   const [visibleBgSettings, setVisibleBgSettings] = useState(false);
   const dispatch = useDispatch();
 
@@ -51,10 +52,7 @@ const CreateBoardPopup = () => {
       createBoard({
         id: uuidv4(),
         name,
-        bg:
-          boardBg.type === "image"
-            ? photos.filter((e) => e.big === boardBg.bg)?.[0]
-            : boardBg.bg,
+        bg: boardBg.bg,
         bgType: boardBg.type,
         columns: [],
         tasks: [],
@@ -66,13 +64,15 @@ const CreateBoardPopup = () => {
     <div className={s.popupWrap}>
       <div className={s.popupInlineWrap}>
         <NewBoardPreview boardBg={boardBg} onCreate={handleCreateBoard} />
-        <NewBoardBgSide
-          photos={photos}
-          bg={boardBg.bg}
-          onSelect={(bg) => setBoardBg(bg)}
-          onMore={() => setVisibleBgSettings(true)}
-        />
-        {visibleBgSettings && (
+        {boardBg.bg && (
+          <NewBoardBgSide
+            photos={photos}
+            bg={boardBg.bg}
+            onSelect={(bg) => setBoardBg(bg)}
+            onMore={() => setVisibleBgSettings(true)}
+          />
+        )}
+        {visibleBgSettings && boardBg.bg && (
           <BoardBgSettings
             photos={photos}
             colors={colors}
