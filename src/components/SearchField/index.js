@@ -2,7 +2,6 @@ import { useRef, useState, Fragment } from "react";
 import s from "./styles.module.scss";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { ReactComponent as Arrow } from "icons/fieldArrow.svg";
 import { ReactComponent as Close } from "icons/close.svg";
 import { ReactComponent as Search } from "icons/search.svg";
 
@@ -17,17 +16,23 @@ const SearchField = ({
   const [isFocused, setIsFocused] = useState(false);
   const fieldRef = useRef(null);
   return (
-    <div className={classnames(s.fieldInlineWrap, className)}>
+    <div
+      className={classnames(
+        s.fieldInlineWrap,
+        { [s.focused]: isFocused },
+        className
+      )}
+    >
       <input
         className={s.field}
         ref={fieldRef}
         tabIndex={0}
         type="text"
-        onBlur={() => {
-          setIsFocused(false);
-          onBlur();
-        }}
-        onFocus={() => {
+        // onBlur={() => {
+        //   setIsFocused(false);
+        //   onBlur();
+        // }}
+        onClick={() => {
           setIsFocused(true);
           onFocus();
         }}
@@ -39,11 +44,15 @@ const SearchField = ({
       <div className={s.btns}>
         {isFocused ? (
           <Fragment>
-            <span className={s.arrow}>
-              <Arrow onClick={onCrossOver} />
-            </span>
             <span>
-              <Close onClick={onClose} />
+              <Close
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                  setIsFocused(false);
+                  fieldRef.current.blur();
+                }}
+              />
             </span>
           </Fragment>
         ) : (
