@@ -41,13 +41,14 @@ const Header = () => {
         <Button
           className={s.btn}
           icon={<Home />}
-          onClick={() => history.push("/boards")}
+          onClick={() => history.push("/")}
           ariaLabel="Вернуться на главную страницу"
         />
         <Button
           className={s.btn}
           icon={<Board />}
           ariaLabel="Открыть меню досок"
+          onClick={() => history.push("/boards")}
         >
           Доски
         </Button>
