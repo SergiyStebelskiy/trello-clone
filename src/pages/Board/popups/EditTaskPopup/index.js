@@ -34,7 +34,12 @@ const EditTaskPopup = ({ onClose, position, data, onDelete, onRename }) => {
           autoFocus={true}
           ref={fieldRef}
         />
-        <Button styled="green" type="submit" className={s.btn}>
+        <Button
+          styled="green"
+          type="submit"
+          className={s.btn}
+          ariaLabel="Сохранить имья задачи"
+        >
           Сохранить
         </Button>
       </form>
@@ -51,6 +56,7 @@ const EditTaskPopup = ({ onClose, position, data, onDelete, onRename }) => {
             styled="black"
             className={s.btn}
             onClick={() => onDelete(data.id)}
+            ariaLabel="Удалить задачу"
           >
             Удалить
           </Button>

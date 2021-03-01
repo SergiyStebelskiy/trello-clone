@@ -37,6 +37,7 @@ const NewBoardPreview = ({ boardBg, onCreate }) => {
         onClick={() =>
           boardName.length > 0 && boardName.length <= 48 && onCreate(boardName)
         }
+        ariaLabel="Создать доску"
       >
         Создать доску
       </Button>

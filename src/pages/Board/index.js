@@ -50,7 +50,6 @@ const BoardPage = () => {
       const column = {
         id: uuidv4(),
         name: newColumnVal,
-        // position: board.columns.length + 1,
       };
       dispatch(createBoardColumn(params.id, column));
       setVisibleAddColumnForm(false);
@@ -227,7 +226,11 @@ const BoardPage = () => {
                 onChange={(e) => setNewColumnVal(e.target.value)}
               />
               <div className={s.btns}>
-                <Button styled="green" type="submit">
+                <Button
+                  styled="green"
+                  type="submit"
+                  ariaLabel="Добавить список"
+                >
                   Добавить список
                 </Button>
                 <span
@@ -243,6 +246,7 @@ const BoardPage = () => {
               className={s.createBtn}
               icon="&#xE901;"
               onClick={() => setVisibleAddColumnForm(true)}
+              ariaLabel="Добавить колонку"
             >
               Добавьте еще одну колонку
             </Button>

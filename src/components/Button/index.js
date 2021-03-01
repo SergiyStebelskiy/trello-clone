@@ -10,8 +10,10 @@ const Button = ({
   ariaLabel,
   styled,
   disabled,
+  ...props
 }) => (
   <button
+    {...props}
     className={classnames(
       s.btn,
       { [s.green]: styled === "green", [s.black]: styled === "black" },
@@ -31,11 +33,16 @@ const Button = ({
 );
 
 Button.propTypes = {
+  icon: PropTypes.any,
   onClick: PropTypes.func,
   ariaLabel: PropTypes.string,
+  styled: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 Button.defaultProps = {
   onClick: () => {},
+  styled: "",
+  disabled: false,
 };
 
 export default Button;

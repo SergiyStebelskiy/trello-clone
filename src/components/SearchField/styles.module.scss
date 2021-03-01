@@ -1,5 +1,7 @@
 $bg: hsla(0, 0%, 100%, 0.3);
 $bg_hover: hsla(0, 0%, 100%, 0.2);
+$color: #172b4d;
+$icon_color: rgb(66, 82, 110);
 
 .fieldInlineWrap {
   position: relative;
@@ -7,11 +9,11 @@ $bg_hover: hsla(0, 0%, 100%, 0.2);
     .field {
       width: 380px;
       padding-right: 54px;
-      background-color: #fff;
-      color: #172b4d;
+      background-color: white;
+      color: $color;
     }
     .btns svg path {
-      fill: rgb(66, 82, 110);
+      fill: $icon_color;
     }
   }
   .field {

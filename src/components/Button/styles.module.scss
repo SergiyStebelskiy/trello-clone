@@ -1,5 +1,8 @@
 $bg: hsla(0, 0%, 100%, 0.3);
+$green_bg: #5aac44;
+$black_bg: rgba(0, 0, 0, 0.6);
 $bg_hover: hsla(0, 0%, 100%, 0.2);
+$black_bg_hover: rgba(0, 0, 0, 0.8);
 $text_color: white;
 $height: 32px;
 
@@ -35,9 +38,9 @@ $height: 32px;
     letter-spacing: 0.7px;
   }
   &.green {
-    background-color: #5aac44;
+    background-color: $green_bg;
     &:hover {
-      background-color: rgba(#5aac44, 0.85);
+      background-color: rgba($green_bg, 0.85);
     }
     &:disabled {
       background-color: #f4f5f7;
@@ -49,13 +52,13 @@ $height: 32px;
     }
   }
   &.black {
-    background: rgba(0, 0, 0, 0.6);
+    background: $black_bg;
     color: #e6e6e6;
     font-size: 14px;
     font-weight: 300;
     padding: 0 12px;
     &:hover {
-      background: rgba(0, 0, 0, 0.8);
+      background: $black_bg_hover;
     }
   }
 }

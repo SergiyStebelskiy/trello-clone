@@ -62,6 +62,7 @@ const TopWrapper = ({ name, choosen }) => {
             dispatch(changeChoosenBoard(params.id));
             setIsChoosen(!isChoosen);
           }}
+          ariaLabel="Добавить доску в избранные"
         />
       </div>
       <div className={s.menuWrap} ref={menuRef}>
@@ -69,6 +70,7 @@ const TopWrapper = ({ name, choosen }) => {
           className={s.menuBtn}
           icon="&#xE94E;"
           onClick={() => setVisibleMenu(!visibleMenu)}
+          ariaLabel="Меню"
         >
           Меню
         </Button>

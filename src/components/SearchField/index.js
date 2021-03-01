@@ -28,10 +28,6 @@ const SearchField = ({
         ref={fieldRef}
         tabIndex={0}
         type="text"
-        // onBlur={() => {
-        //   setIsFocused(false);
-        //   onBlur();
-        // }}
         onClick={() => {
           setIsFocused(true);
           onFocus();

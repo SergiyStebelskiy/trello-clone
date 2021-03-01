@@ -122,7 +122,11 @@ const Column = ({ id, name, index, tasks, onDelete, onEditTask }) => {
                   autoFocus={true}
                 />
                 <div className={s.btns}>
-                  <Button styled="green" type="submit">
+                  <Button
+                    styled="green"
+                    type="submit"
+                    ariaLabel="Добавить карточку"
+                  >
                     Добавить карточку
                   </Button>
                   <span
@@ -137,6 +141,7 @@ const Column = ({ id, name, index, tasks, onDelete, onEditTask }) => {
               <button
                 className={s.createTaskBtn}
                 onClick={() => setVisibleCreateTaskForm(true)}
+                ariaLabel="Добавить еще одну карточку"
               >
                 <span>&#xE901;</span> Добавить еще одну карточку
               </button>
