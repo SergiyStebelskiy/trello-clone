@@ -15,12 +15,11 @@ const CreateBoardPopup = () => {
   const photos = useSelector((state) => state.photos);
   const [boardBg, setBoardBg] = useState({
     type: "image",
-    bg: photos?.[0],
+    bg: photos.length && photos?.[0],
   });
-  console.log(boardBg);
   const [visibleBgSettings, setVisibleBgSettings] = useState(false);
   const dispatch = useDispatch();
-
+  console.log("bg", boardBg.bg);
   useEffect(() => {
     if (!photos.length) {
       axios
@@ -30,6 +29,13 @@ const CreateBoardPopup = () => {
           },
         })
         .then((res) => {
+          console.log(
+            res.data.photos?.map((e) => ({
+              small: e.src.small,
+              big: e.src.large2x,
+              normal: e.src.medium,
+            }))?.[0]
+          );
           setBoardBg({
             type: "image",
             bg: res.data.photos?.map((e) => ({
@@ -47,15 +53,12 @@ const CreateBoardPopup = () => {
               }))
             )
           );
-          setBoardBg({
-            type: "image",
-            bg: res.data.photos[0].src.large2x,
-          });
         });
     }
   }, [dispatch]);
 
   const handleCreateBoard = (name) => {
+    console.log("create", boardBg.bg);
     dispatch(
       createBoard({
         id: uuidv4(),
