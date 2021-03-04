@@ -30,6 +30,14 @@ const CreateBoardPopup = () => {
           },
         })
         .then((res) => {
+          setBoardBg({
+            type: "image",
+            bg: res.data.photos?.map((e) => ({
+              small: e.src.small,
+              big: e.src.large2x,
+              normal: e.src.medium,
+            }))?.[0],
+          });
           dispatch(
             setPhotos(
               res.data.photos.map((e) => ({
